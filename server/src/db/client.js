@@ -21,6 +21,7 @@ const pool = new Pool({
     user:             DB_USER,
     password:         DB_PASSWORD,
     ssl:              { rejectUnauthorized: false }, // required for Supabase
+    family:           4,       // force IPv4 — prevents ENETUNREACH on Railway/Render
     max:              10,      // max simultaneous connections in the pool
     idleTimeoutMillis: 30000,  // close idle connections after 30s (default: 10s)
     connectionTimeoutMillis: 5000, // error if can't get connection within 5s

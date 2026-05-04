@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "RENDER_BACKEND_URL/api/:path*"
+      "destination": "https://supportbot-pro-production.up.railway.app/api/:path*"
     }
   ]
 }

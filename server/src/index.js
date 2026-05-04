@@ -1,3 +1,8 @@
+// Force IPv4 DNS resolution — must be the very first line before any requires
+// that might trigger network/DNS activity (fixes ENETUNREACH on Railway/Render)
+const dns = require('dns')
+dns.setDefaultResultOrder('ipv4first')
+
 const express = require('express')
 const cors    = require('cors')
 const morgan  = require('morgan')
